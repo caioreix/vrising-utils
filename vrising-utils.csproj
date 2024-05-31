@@ -6,7 +6,8 @@
     <RootNamespace>vrising-utils</RootNamespace>
     <PackageId>BepInEx-Utils.VRising</PackageId>
     <Authors>caioreix</Authors>
-    <Version>1.0.1</Version>
+    <BepInExVersion>6.0.0-be.691</BepInExVersion>
+    <Version>$(BepInExVersion)-v.1</Version>
     <RepositoryUrl>https://github.com/caioreix/vrising-utils</RepositoryUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Nullable>disable</Nullable>
@@ -18,7 +19,7 @@
 
   <ItemGroup>
     <PackageReference Include="VRising.Unhollowed.Client" Version="1.0.5.802790001" />
-    <PackageReference Include="bepinex-utils" Version="6.0.0-be.691-bu.1" Condition=" '$(Configuration)' == 'Release'" />
+    <PackageReference Include="bepinex-utils" Version="$(BepInExVersion)-bu.1" Condition=" '$(Configuration)' == 'Release'" />
     <ProjectReference Include="../BepInEx-Utils/bepinex-utils.csproj" Condition=" '$(Configuration)' == 'Test'" />
   </ItemGroup>
 
