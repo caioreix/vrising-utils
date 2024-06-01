@@ -19,7 +19,7 @@
 
   <ItemGroup>
     <PackageReference Include="VRising.Unhollowed.Client" Version="1.0.5.802790001" />
-    <PackageReference Include="BepInEx-Utils" Version="$(BepInExVersion)-v.2" Condition=" '$(Configuration)' == 'Release'" />
+    <PackageReference Include="BepInEx-Utils" Version="$(BepInExVersion)-v.3" Condition=" '$(Configuration)' == 'Release'" />
     <ProjectReference Include="../BepInEx-Utils/bepinex-utils.csproj" Condition=" '$(Configuration)' == 'Test'" />
   </ItemGroup>
 
