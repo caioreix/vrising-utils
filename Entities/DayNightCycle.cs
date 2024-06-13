@@ -5,7 +5,7 @@ namespace Utils.VRising.Entities;
 
 public static class DayNightCycle {
     public static ProjectM.DayNightCycle GetSingleton() {
-        return Systems.ServerScriptMapper.Get()._DayNightCycleAccessor.GetSingleton();
+        return Systems.ServerScriptMapper.Get()._ServerGameManager.DayNightCycle;
     }
 
     public static ProjectM.TimeOfDay GetTimeOfDay(ProjectM.DayNightCycle dnc = default) {
