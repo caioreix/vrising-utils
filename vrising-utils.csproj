@@ -11,6 +11,9 @@
     <RepositoryUrl>https://github.com/caioreix/vrising-utils</RepositoryUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Nullable>disable</Nullable>
+
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
   </PropertyGroup>
 
   <Target Name="Copy pack to dist" AfterTargets="Pack" >
