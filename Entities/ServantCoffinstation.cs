@@ -6,14 +6,14 @@ namespace Utils.VRising.Entities;
 
 public static class ServantCoffinstation {
     public static NativeArray<Entity> GetAll() {
-        var query = World.em.CreateEntityQuery(
+        var query = World.EntityManager.CreateEntityQuery(
             ComponentType.ReadWrite<ProjectM.ServantCoffinstation>()
         );
         return query.ToEntityArray(Allocator.Temp);
     }
 
     public static ProjectM.ServantCoffinstation GetComponentData(Entity servantCoffinStation) {
-        return World.em.GetComponentData<ProjectM.ServantCoffinstation>(servantCoffinStation);
+        return World.EntityManager.GetComponentData<ProjectM.ServantCoffinstation>(servantCoffinStation);
     }
 
     public static Dictionary<Entity, ProjectM.ServantCoffinstation> GetAllComponentData() {
@@ -38,6 +38,6 @@ public static class ServantCoffinstation {
     }
 
     public static void SetComponentData(Entity coffinStationEntity, ProjectM.ServantCoffinstation coffinStation) {
-        World.em.SetComponentData<ProjectM.ServantCoffinstation>(coffinStationEntity, coffinStation);
+        World.EntityManager.SetComponentData<ProjectM.ServantCoffinstation>(coffinStationEntity, coffinStation);
     }
 }

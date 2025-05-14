@@ -12,10 +12,10 @@ public static class SetTimeOfDayEvent {
     }
 
     private static void create(int hour, int day, ProjectM.Network.SetTimeOfDayEvent.SetTimeType type) {
-        var setTimeEntity = World.em.CreateEntity(
+        var setTimeEntity = World.EntityManager.CreateEntity(
             ComponentType.ReadOnly<ProjectM.Network.SetTimeOfDayEvent>()
         );
-        World.em.SetComponentData<ProjectM.Network.SetTimeOfDayEvent>(
+        World.EntityManager.SetComponentData<ProjectM.Network.SetTimeOfDayEvent>(
             setTimeEntity,
             new ProjectM.Network.SetTimeOfDayEvent() { Hour = hour, Day = day, Type = type }
         );

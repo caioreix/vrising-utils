@@ -8,14 +8,14 @@ namespace Utils.VRising.Entities;
 public static class ActiveServantMission {
     // Get the entities of component type ActiveServantMission.
     public static NativeArray<Entity> GetAll() {
-        var servantMissionsQuery = World.em.CreateEntityQuery(
+        var servantMissionsQuery = World.EntityManager.CreateEntityQuery(
                 ComponentType.ReadWrite<ProjectM.CastleBuilding.ActiveServantMission>()
             );
         return servantMissionsQuery.ToEntityArray(Allocator.Temp);
     }
 
     public static DynamicBuffer<ProjectM.CastleBuilding.ActiveServantMission> GetBuffer(Entity mission) {
-        return World.em.GetBuffer<ProjectM.CastleBuilding.ActiveServantMission>(mission);
+        return World.EntityManager.GetBuffer<ProjectM.CastleBuilding.ActiveServantMission>(mission);
     }
 
     public static List<DynamicBuffer<ProjectM.CastleBuilding.ActiveServantMission>> GetAllBuffers() {

@@ -6,7 +6,7 @@ namespace Utils.VRising.Entities;
 
 public static class World {
     internal static Unity.Entities.World? _world;
-    internal static Unity.Entities.EntityManager em => world.EntityManager;
+    public static Unity.Entities.EntityManager EntityManager => world.EntityManager;
     public static Unity.Entities.World world {
         get {
             if (_world != null) return _world;
@@ -18,18 +18,22 @@ public static class World {
         }
     }
 
+    public static void UnPatch() {
+        _world = null;
+    }
+
     public static bool IsServer => Application.productName == "VRisingServer";
     public static bool IsClient => Application.productName == "VRising";
 
-    public static Unity.Entities.World Client {
+    public static Unity.Entities.World? Client {
         get {
-            return GetWorld("Client_0") ?? throw new System.Exception("There is no Client world (yet). Did you install a client mod on the server?");
+            return GetWorld("Client_0") ?? null;
         }
     }
 
-    public static Unity.Entities.World Server {
+    public static Unity.Entities.World? Server {
         get {
-            return GetWorld("Server") ?? throw new System.Exception("There is no Server world (yet). Did you install a server mod on the client?");
+            return GetWorld("Server") ?? null;
         }
     }
 
