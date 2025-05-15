@@ -1,3 +1,4 @@
+#pragma warning disable IDE0300 // Use 'new(...)'
 
 using System;
 using Il2CppInterop.Runtime;
@@ -9,17 +10,17 @@ using Utils.Logger;
 namespace Utils.VRising.Systems;
 
 public static class Chat {
-    static readonly ComponentType[] _networkChatMessageServerEventComponents = [
+    static readonly ComponentType[] _networkChatMessageServerEventComponents = new ComponentType[] {
         ComponentType.ReadOnly(Il2CppType.Of<NetworkEventType>()),
         ComponentType.ReadOnly<SendEventToUser>(),
         ComponentType.ReadOnly(Il2CppType.Of<ChatMessageServerEvent>()),
-    ];
+    };
 
-    static readonly ComponentType[] _networkChatMessageEventComponents = [
+    static readonly ComponentType[] _networkChatMessageEventComponents = new ComponentType[] {
         ComponentType.ReadOnly(Il2CppType.Of<FromCharacter>()),
         ComponentType.ReadOnly(Il2CppType.Of<NetworkEventType>()),
         ComponentType.ReadOnly(Il2CppType.Of<ChatMessageEvent>())
-    ];
+    };
 
     static readonly NetworkEventType _networkChatMessageServerEventType = new() {
         IsAdminEvent = false,
